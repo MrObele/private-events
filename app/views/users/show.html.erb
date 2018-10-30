@@ -1,5 +1,6 @@
+<% if logged_in? %>
 <h1>Current User is : <%= current_user.name %></h1>
-
+<% end %>
 <h1> <%= @user.name %> </h1>
 
 <p><%= @user.email  %> </p> 

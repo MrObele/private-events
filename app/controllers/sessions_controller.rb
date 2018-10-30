@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  include SessionsHelper
   def new
 
   end
@@ -19,7 +20,4 @@ class SessionsController < ApplicationController
   private
 
 
-  def log_in user
-    session[:email] = user.email
-  end
 end
