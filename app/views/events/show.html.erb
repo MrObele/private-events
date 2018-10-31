@@ -5,3 +5,6 @@
 <p> This event is organized by: 
 <%= @event.organizer.name %> 
 </p>
+<% @event.attendees.each do |attendee| %>
+    <p><%= link_to "#{attendee.name}", attendee %></p>
+ <% end %>

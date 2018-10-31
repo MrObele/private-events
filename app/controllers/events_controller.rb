@@ -2,6 +2,8 @@ class EventsController < ApplicationController
   include SessionsHelper
   def index
     @events = Event.all
+    
+    
   end
 
   def new
@@ -25,6 +27,7 @@ class EventsController < ApplicationController
     redirect_to root_path
   end
   end
+
 
   private 
   
