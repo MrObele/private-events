@@ -1,2 +1,7 @@
-<h1>Events#show</h1>
-<p>Find me in app/views/events/show.html.erb</p>
+<h1>
+<%= @event.description %> 
+</h1>
+
+<p> This event is organized by: 
+<%= @event.organizer.name %> 
+</p>
