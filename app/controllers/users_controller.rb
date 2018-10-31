@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   include SessionsHelper
+  include EventsHelper
   def new
     @user = User.new
   end
@@ -15,8 +16,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @upcoming_events = upcoming_events
-    @prev_events = past_events
+    @upcoming_events = @user.upcoming_events
+    @prev_events = @user.past_events
   end
 
   def attend(event)

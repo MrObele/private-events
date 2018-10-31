@@ -2,8 +2,6 @@ class EventsController < ApplicationController
   include SessionsHelper
   def index
     @events = Event.all
-    
-    
   end
 
   def new

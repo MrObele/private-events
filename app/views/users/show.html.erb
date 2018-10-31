@@ -12,14 +12,6 @@
 <% end %>
 <% end %>
 
-<h2>Attended Events</h2>
-<% if @user.attended_events.any? %>
-<% @user.attended_events.each do |event| %>
-    <p> <%= event.description %></p>
-    <p> <%= event.location %></p>
-    <p> <%= event.date %></p>
-<% end %>
-<% end %>
 
 <h2>Upcoming Events</h2>
 <% if  @upcoming_events.any? %>
