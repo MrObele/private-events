@@ -8,3 +8,6 @@
 <% @event.attendees.each do |attendee| %>
     <p><%= link_to "#{attendee.name}", attendee %></p>
  <% end %>
+ <% if current_user.name!= @event.organizer.name %>
+  <button class="btn btn-primary">Attend Event</button>
+  <% end %>
