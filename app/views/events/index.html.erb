@@ -15,7 +15,7 @@ All Events <% if @events.any? %> (<%= @events.count %>) <%end%>
    <tbody>
    <% @events.past.each do |event| %>
    <tr>
-   <td><%= event.description%></td>
+   <td><%= link_to "#{event.description}", event %></td>
    <td><%= event.location%></td>
    <td><%= event.date %></td>
    </tr>
@@ -38,7 +38,7 @@ All Events <% if @events.any? %> (<%= @events.count %>) <%end%>
    <tbody>
    <% @events.upcoming.each do |event| %>
    <tr>
-   <td><%= event.description%></td>
+   <td><%= link_to "#{event.description}", event %></td>
    <td><%= event.location%></td>
    <td><%= event.date %></td>
    </tr>
