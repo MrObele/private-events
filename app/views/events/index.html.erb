@@ -3,31 +3,46 @@ All Events <% if @events.any? %> (<%= @events.count %>) <%end%>
 </h1>
 
 <h2>Past Events</h2>
-<% @events.past.each do |event| %>
-  <div>
-    <h3>
-    Description: <%= event.description%>
-    </h3>
-    <p>
-    Location: <%= event.location%>
-    </p>
-    <p>
-    Date: <%= event.date %>
-    </p>
+   <div class = "table-responsive">
+   <table class = "table table-striped table-bordered">
+   <thead>
+   <tr>
+   <th>Description</th>
+   <th>Location</th>
+   <th>Date</th>
+   </tr>
+   </thead>
+   <tbody>
+   <% @events.past.each do |event| %>
+   <tr>
+   <td><%= event.description%></td>
+   <td><%= event.location%></td>
+   <td><%= event.date %></td>
+   </tr>
+   <% end %>
+   </tbody>
+   </table>
   </div>
-<% end %>
+
 
 <h2>Upcoming Events</h2>
-<% @events.upcoming.each do |event| %>
-  <div>
-    <h3>
-    Description: <%= event.description%>
-    </h3>
-    <p>
-    Location: <%= event.location%>
-    </p>
-    <p>
-    Date: <%= event.date %>
-    </p>
+<div class = "table-responsive">
+   <table class = "table table-striped table-bordered">
+   <thead>
+   <tr>
+   <th>Description</th>
+   <th>Location</th>
+   <th>Date</th>
+   </tr>
+   </thead>
+   <tbody>
+   <% @events.upcoming.each do |event| %>
+   <tr>
+   <td><%= event.description%></td>
+   <td><%= event.location%></td>
+   <td><%= event.date %></td>
+   </tr>
+   <% end %>
+   </tbody>
+   </table>
   </div>
-<% end %>
