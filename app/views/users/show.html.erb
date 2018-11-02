@@ -1,33 +1,79 @@
 <% if logged_in? %>
-<h1>Current User is : <%= current_user.name %></h1>
+<h6>Current User is : <%= current_user.name %></h6>
 <% end %>
 <h1> <%= @user.name %> </h1>
 <p><%= @user.email  %> </p> 
 <h2>Organized Events</h2>
+<div class = "table-responsive">
+   <table class = "table table-striped table-bordered">
+   <thead>
+   <tr>
+   <th>Description</th>
+   <th>Location</th>
+   <th>Date</th>
+   </tr>
+   </thead>
+   <tbody>
 <% if @user.organized_events.any? %>
 <% @user.organized_events.each do |event| %>
-    <p> <%= event.description %></p>
-    <p> <%= event.location %></p>
-    <p> <%= event.date %></p>
-<% end %>
-<% end %>
+   <tr>
+   <td><%= link_to "#{event.description}", event %></td>
+   <td><%= event.location%></td>
+   <td><%= event.date %></td>
+   </tr>
+   <% end %>
+   <% end %>
+   </tbody>
+   </table>
+  </div>
+
 
 
 <h2>Upcoming Events</h2>
-<% if  @upcoming_events.any? %>
+<div class = "table-responsive">
+   <table class = "table table-striped table-bordered">
+   <thead>
+   <tr>
+   <th>Description</th>
+   <th>Location</th>
+   <th>Date</th>
+   </tr>
+   </thead>
+   <tbody>
+   <% if @upcoming_events.any? %>
 <% @upcoming_events.each do |event| %>
-    <p> <%= event.description %></p>
-    <p> <%= event.location %></p>
-    <p> <%= event.date %></p>
-<% end %>
-<% end %>
+   <tr>
+   <td><%= link_to "#{event.description}", event %></td>
+   <td><%= event.location%></td>
+   <td><%= event.date %></td>
+   </tr>
+   <% end %>
+   <% end %>
+   </tbody>
+   </table>
+  </div>
 
 <h2>Past Events</h2>
-<% if @prev_events.any? %>
+   <div class = "table-responsive">
+   <table class = "table table-striped table-bordered">
+   <thead>
+   <tr>
+   <th>Description</th>
+   <th>Location</th>
+   <th>Date</th>
+   </tr>
+   </thead>
+   <tbody>
+   <% if @prev_events.any? %>
 <% @prev_events.each do |event| %>
-    <p> <%= event.description %></p>
-    <p> <%= event.location %></p>
-    <p> <%= event.date %></p>
-<% end %>
-<% end %>
+   <tr>
+   <td><%= link_to "#{event.description}", event %></td>
+   <td><%= event.location%></td>
+   <td><%= event.date %></td>
+   </tr>
+   <% end %>
+   <% end %>
+   </tbody>
+   </table>
+  </div>
 
