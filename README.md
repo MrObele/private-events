@@ -1,24 +1,11 @@
-# README
+# Private Events
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+EventBrite function clone.
 
-Things you may want to cover:
+* Ruby version - 2.6
 
-* Ruby version
+* Rails Version - 5.2.1
 
-* System dependencies
+* After cloning the repository, run `rails db:migrate`  then run `rails server`
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* The app is served at `localhost:3000`
